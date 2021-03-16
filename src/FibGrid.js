@@ -52,7 +52,7 @@ function _matchFibOnCell(grid, row, col, length = 5) {
 	 */
 
 	// extract horizontal neighbor cells to a separate array
-	const fromCol = Math.max(0, col - length + 1);
+	const fromCol = Math.max(0, col - length);
 	const toCol = Math.min(grid[row].length, col + length);
 	const rowNeighbors = grid[row].slice(fromCol, toCol);
 	// case 1
@@ -72,7 +72,7 @@ function _matchFibOnCell(grid, row, col, length = 5) {
 	}
 
 	// extract vertical neighbor cells to a separate array
-	const fromRow = Math.max(0, row - length + 1);
+	const fromRow = Math.max(0, row - length);
 	const toRow = Math.min(grid.length, row + length);
 	const colNeighbors = [];
 	for (let i = fromRow; i < toRow; i++) {
